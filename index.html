@@ -6,33 +6,56 @@
 <title>طراحی وبسایت شیباتیم</title>
 <meta name="description" content="طراحی کامل وبسایت فروشگاهی با اتصال به ترب، باسلام، بله و روبیکا؛ فقط ۲۰ میلیون تومان با پرداخت مرحله‌ای.">
 <style>
+  :root {
+    --navy: #0f2040;
+    --indigo: #4f46e5;
+    --violet: #7c3aed;
+    --ink: #17203a;
+    --muted: #5b6478;
+    --line: #e6e9f2;
+    --bg: #f6f7fb;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Tahoma, sans-serif; color: #1a1a1a; background: #fff; line-height: 2; }
-  a { color: #0b5fff; text-decoration: none; }
-  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-  header { border-bottom: 1px solid #e5e5e5; padding: 18px 0; }
+  body { font-family: Tahoma, sans-serif; color: var(--ink); background: var(--bg); line-height: 2; }
+  a { color: var(--indigo); text-decoration: none; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+  header { background: #fff; box-shadow: 0 2px 12px rgba(15, 32, 64, .07); padding: 16px 0; position: sticky; top: 0; z-index: 10; }
   header .wrap { display: flex; justify-content: space-between; align-items: center; }
-  header strong { font-size: 20px; }
-  header a.tel { font-weight: bold; }
-  .hero { text-align: center; padding: 64px 0 48px; }
-  .hero h1 { font-size: 42px; line-height: 1.6; margin-bottom: 8px; }
-  .hero p { font-size: 18px; color: #444; }
-  .price { font-size: 30px; font-weight: bold; margin-top: 20px; }
-  .price small { display: block; font-size: 16px; font-weight: normal; color: #555; }
-  .btn { display: inline-block; background: #111; color: #fff; padding: 12px 36px; border-radius: 8px; margin-top: 24px; font-size: 17px; }
-  section { padding: 40px 0; border-top: 1px solid #eee; }
-  h2 { font-size: 24px; margin-bottom: 20px; }
-  ul.grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
-  ul.grid li::before { content: "✓ "; color: #0a7d2c; font-weight: bold; }
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .card { border: 1px solid #e5e5e5; border-radius: 10px; padding: 20px; }
-  .card h3 { font-size: 18px; margin-bottom: 4px; }
-  .card p { color: #555; font-size: 15px; }
-  .card a { display: inline-block; margin-top: 10px; font-size: 15px; }
-  footer { border-top: 1px solid #eee; padding: 28px 0 40px; text-align: center; color: #555; }
-  footer .tel-big { font-size: 26px; font-weight: bold; color: #111; direction: ltr; display: inline-block; }
+  header strong { font-size: 20px; color: var(--navy); }
+  header strong span { color: var(--indigo); }
+  header a.tel { font-weight: bold; color: var(--indigo); border: 2px solid var(--indigo); border-radius: 999px; padding: 4px 16px; font-size: 15px; }
+  header a.tel:hover { background: var(--indigo); color: #fff; }
+  .hero { text-align: center; padding: 72px 0 60px; background: linear-gradient(135deg, var(--navy) 0%, var(--indigo) 60%, var(--violet) 100%); color: #fff; }
+  .hero .badge { display: inline-block; background: rgba(255, 255, 255, .16); border: 1px solid rgba(255, 255, 255, .35); border-radius: 999px; padding: 4px 18px; font-size: 14px; margin-bottom: 18px; }
+  .hero h1 { font-size: 44px; line-height: 1.6; margin-bottom: 10px; }
+  .hero p { font-size: 18px; color: #dfe3f5; }
+  .price { font-size: 32px; font-weight: bold; margin-top: 24px; }
+  .price small { display: inline-block; background: rgba(255, 255, 255, .16); border: 1px solid rgba(255, 255, 255, .35); border-radius: 999px; padding: 2px 18px; font-size: 16px; font-weight: normal; color: #fff; margin-top: 10px; }
+  .btn { display: inline-block; background: linear-gradient(135deg, var(--indigo), var(--violet)); color: #fff; padding: 14px 44px; border-radius: 999px; margin-top: 28px; font-size: 18px; font-weight: bold; box-shadow: 0 8px 20px rgba(79, 70, 229, .45); transition: transform .15s ease, box-shadow .15s ease; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(79, 70, 229, .55); }
+  section { padding: 52px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  h2 { font-size: 26px; margin-bottom: 22px; color: var(--navy); border-right: 4px solid var(--indigo); padding-right: 14px; }
+  ul.grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+  ul.grid li::before { content: "✓ "; color: var(--indigo); font-weight: bold; }
+  ul.grid li { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px 16px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: 0 6px 24px rgba(15, 32, 64, .07); transition: transform .15s ease, box-shadow .15s ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15, 32, 64, .12); }
+  .card h3 { font-size: 19px; margin-bottom: 4px; color: var(--navy); }
+  .card p { color: var(--muted); font-size: 15px; }
+  .card a { display: inline-block; margin-top: 10px; font-size: 15px; font-weight: bold; }
+  .card figure { margin-top: 14px; }
+  .card figure img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 10px; }
+  .card figure.mobile { max-width: 230px; margin-left: auto; margin-right: auto; }
+  .card figcaption { font-size: 13px; color: #8a91a5; text-align: center; margin-top: 6px; }
+  .terms { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px 28px; box-shadow: 0 6px 24px rgba(15, 32, 64, .06); }
+  footer { background: var(--navy); padding: 36px 0 44px; text-align: center; color: #c3cbe4; }
+  footer p { color: #c3cbe4; }
+  footer .tel-big { font-size: 28px; font-weight: bold; color: #fff; direction: ltr; display: inline-block; margin-top: 8px; }
   @media (max-width: 640px) {
     .hero h1 { font-size: 30px; }
+    .hero { padding: 56px 0 48px; }
     ul.grid { grid-template-columns: 1fr; }
     .cards { grid-template-columns: 1fr; }
   }
@@ -42,13 +65,14 @@
 
 <header>
   <div class="wrap">
-    <strong>طراحی وبسایت شیباتیم</strong>
+    <strong>طراحی وبسایت <span>شیباتیم</span></strong>
     <a class="tel" href="tel:+989227103816">۰۹۲۲۷۱۰۳۸۱۶</a>
   </div>
 </header>
 
 <div class="wrap">
   <div class="hero">
+    <p class="badge">تیم شیباتیم</p>
     <h1>طراحی کامل وبسایت</h1>
     <p>فروشگاه اینترنتی شما، آماده و کامل؛ با اتصال به ترب، باسلام و شبکه‌های اجتماعی</p>
     <div class="price">فقط ۲۰ میلیون تومان
@@ -58,7 +82,7 @@
   </div>
 
   <section>
-    <h2>پکیج شامل چیست</h2>
+    <h2>پکیج شامل چیست؟</h2>
     <ul class="grid">
       <li>طراحی اختصاصی وبسایت</li>
       <li>دامنه ir. رایگان</li>
@@ -67,7 +91,7 @@
       <li>اتصال به ترب</li>
       <li>اتصال به باسلام</li>
       <li>اتصال به کانال بله و روبیکا</li>
-      <li>سئو</li>
+      <li>اتصال به گوگل</li>
     </ul>
   </section>
 
@@ -78,23 +102,29 @@
         <h3>شیباکیدز</h3>
         <p>فروشگاه اینترنتی لباس دخترانه</p>
         <a href="https://shibakids.ir">shibakids.ir</a>
+        <figure><img src="images/shibakids-desktop.png" alt="نمای کامپیوتر صفحه اصلی شیباکیدز" loading="lazy"><figcaption>نمای کامپیوتر</figcaption></figure>
+        <figure class="mobile"><img src="images/shibakids-mobile.png" alt="نمای موبایل صفحه اصلی شیباکیدز" loading="lazy"><figcaption>نمای موبایل</figcaption></figure>
       </div>
       <div class="card">
         <h3>نواگران</h3>
         <p>فروشگاه اینترنتی موسیقی</p>
         <a href="https://navagaran.com">navagaran.com</a>
+        <figure><img src="images/navagaran-desktop.png" alt="نمای کامپیوتر صفحه اصلی نواگران" loading="lazy"><figcaption>نمای کامپیوتر</figcaption></figure>
+        <figure class="mobile"><img src="images/navagaran-mobile.png" alt="نمای موبایل صفحه اصلی نواگران" loading="lazy"><figcaption>نمای موبایل</figcaption></figure>
       </div>
       <div class="card">
         <h3>پرتوفا</h3>
         <p>فروشگاه اینترنتی عینک و عطر</p>
         <a href="https://partofa.ir">partofa.ir</a>
+        <figure><img src="images/partofa-desktop.png" alt="نمای کامپیوتر صفحه اصلی پرتوفا" loading="lazy"><figcaption>نمای کامپیوتر</figcaption></figure>
+        <figure class="mobile"><img src="images/partofa-mobile.png" alt="نمای موبایل صفحه اصلی پرتوفا" loading="lazy"><figcaption>نمای موبایل</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section>
     <h2>شرایط پرداخت</h2>
-    <p>مبلغ ۲۰ میلیون تومان به‌صورت مرحله‌ای پرداخت می‌شود؛ قسط اول پیش از شروع کار و قسط آخر پیش از تحویل نهایی وبسایت.</p>
+    <div class="terms"><p>مبلغ ۲۰ میلیون تومان به‌صورت مرحله‌ای پرداخت می‌شود؛ قسط اول پیش از شروع کار و قسط آخر پیش از تحویل نهایی وبسایت.</p></div>
   </section>
 
   <section>
@@ -104,6 +134,7 @@
       <li>ادمین پاره‌وقت</li>
       <li>کدنویسی اختصاصی</li>
       <li>اتصال به هوش مصنوعی</li>
+      <li>سئو</li>
     </ul>
   </section>
 </div>
